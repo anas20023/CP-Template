@@ -6,9 +6,11 @@ vector<bool> vis(N);
 
 void DFS(int u){
     vis[u]=true;
-    cout<<"Node "<<u<<endl;
+   // cout<<"Node "<<u<<endl;
+    //cout<<u<<" ";
     for(int v:graph[u]){
         if(!vis[v]){
+           // cout<<"Parent "<<u<<" Child "<<v<<endl;
             DFS(v);
             //cout<<"BackTracking from "<<v<<endl;
         }
