@@ -21,8 +21,9 @@ void solve()
     cout<<ans<<endl;
 }
 int main(){
-    int t;cin>>t;
-    while(t--){
-        solve();
-    }
+    // int t;cin>>t;
+    // t=1;
+    // while(t--){
+    // }
+    solve();
 }
