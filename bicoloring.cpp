@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-const int N=1e5+10;
+const int N=2e5+10;
 vector<int>graph[N];
 vector<bool>vis(N);
 vector<int>color(N);
@@ -15,8 +15,7 @@ void dfs(int src, int nxt_color){
     vis[src]=true;
     color[src]=nxt_color;
     for(auto v:graph[src]){
-        if(color[src]==1) dfs(v,2);
-        else dfs(v,1);
+         dfs(v,3-nxt_color);
     }
 }
 int main()
@@ -28,7 +27,14 @@ int main()
         graph[v1].push_back(v2);
         graph[v2].push_back(v1);
     }
-    dfs(1,1);
+   for (int i = 1; i <=v; ++i)
+   {
+       if(!vis[i])  dfs(i,1);
+   }
+    if(!is_ok) {
+        cout<<"IMPOSSIBLE"<<endl;
+        return 0; 
+    }
     for (int i = 1; i <=v ; ++i)
     {
         cout<<color[i]<<" ";
